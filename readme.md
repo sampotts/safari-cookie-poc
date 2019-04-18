@@ -1,5 +1,13 @@
 # Safari Cookie PoC
 
+## Instructions
+
+- Setup the repo as below
+- Visit http://example2.com to get issued the test cookie (this is required for Safari)
+- Visit http://example1.com to check if the cookie is sent for the `<iframe>` and XHR request
+
+It seems to be time based so it may be that you need to wait to see the issue.
+
 ## Setup
 
 You need to setup two virtual hosts in whichever web server you use with the domains:
@@ -9,7 +17,7 @@ You need to setup two virtual hosts in whichever web server you use with the dom
 
 The virtual host for `example2.com` also needs CORS setup (for origin `http://example1.com`) to allow for the JSON/XHR test to work.
 
-### Example configs
+### Example configuration
 
 These are for nginx
 
