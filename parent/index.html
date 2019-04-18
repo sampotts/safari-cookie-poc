@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Parent</title>
+    <style>
+      html {
+        font: 15px/1.5 system-ui, BlinkMacSystemFont, -apple-system, Segoe UI,
+          Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+          Helvetica Neue, sans-serif;
+        color: #2e343d;
+      }
+      pre {
+        font: 15px/1.5 "SFMono-Regular", monospace;
+        background: #f7f8fa;
+        border: 1px solid #dce4e6;
+        border-radius: 5px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Frame</p>
+    <iframe
+      src="http://example2.com"
+      style="border: 0; width: 200px; height: 40px"
+    ></iframe>
+
+    <p>XHR</p>
+    <pre id="output"></pre>
+    <script src="xhr.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        getJSON("http://example2.com/example.json").then(json => {
+          const output = JSON.stringify(json, null, 2);
+          document.getElementById("output").innerHTML = output;
+        });
+      });
+    </script>
+  </body>
+</html>
